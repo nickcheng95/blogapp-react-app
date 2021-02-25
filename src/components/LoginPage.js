@@ -6,8 +6,8 @@ export const LoginPage = ({startLogin}) => {
     return (
         <div className='box-layout'>
             <div className='box-layout__box'>
-                <h1 className='box-layout__title'>Boilerplate</h1>
-                <p>sub title potential</p>
+                <h1 className='box-layout__title'>My Blog</h1>
+                <p>Start to share your life</p>
                 <button onClick={startLogin} className='button'>Login with Google</button>
             </div>
         </div>
