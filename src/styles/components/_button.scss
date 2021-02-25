@@ -1,0 +1,19 @@
+.button{
+    background: $blue;
+    color: white;
+    border: none;
+    padding: $s-size ;
+    font-size: $font-size-large;
+    font-weight: 300;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1;
+}
+
+.button__link{
+    background: none;
+}
+
+.button__remove{
+    background: #888888;
+}
