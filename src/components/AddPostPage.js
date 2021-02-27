@@ -1,11 +1,11 @@
 import React from 'react';
 import PostForm from './PostForm'
 import {connect} from 'react-redux'
-import {addPost} from '../actions/post'
+import {startAddPost} from '../actions/post'
 
 export class AddPostPage extends React.Component{
     onSubmit = (post) => {
-        this.props.addPost(post);
+        this.props.startAddPost(post);
         this.props.history.push('/')
     }
 
@@ -24,7 +24,7 @@ export class AddPostPage extends React.Component{
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        addPost: (post) => dispatch(addPost(post))
+        startAddPost: (post) => dispatch(startAddPost(post))
     }
 }
 

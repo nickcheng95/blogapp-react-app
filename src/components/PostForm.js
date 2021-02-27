@@ -38,8 +38,8 @@ export default class PostForm extends React.Component{
         return (
             <form className='form' onSubmit={this.onSubmit}>
                 {this.state.error && <p>{this.state.error}</p>}
-                <input type='text' placeholder='Post Title' onChange={this.onTitleChange}/>
-                <input type='text' placeholder='Post Content' onChange={this.onContentChange}/>
+                <input type='text' placeholder='Post Title' onChange={this.onTitleChange} value={this.state.postTitle}/>
+                <input type='text' placeholder='Post Content' onChange={this.onContentChange} value={this.state.postContent}/>
                 <div>
                     <button className='button'>Save Post</button>
                 </div>

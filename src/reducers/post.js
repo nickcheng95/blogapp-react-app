@@ -20,6 +20,9 @@ export default (state=[],action) => {
             return state.filter((val)=>{
                 if(val.id!==action.id){return val}
             })
+
+        case 'SET_POST':
+            return action.posts
         
         default: return state
     }
