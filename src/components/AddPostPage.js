@@ -12,7 +12,7 @@ export class AddPostPage extends React.Component{
     render(){
         return (
             <div>
-                <div className='content-container'>
+                <div className='content-container addpage'>
                     <PostForm onSubmit={this.onSubmit}></PostForm>
                 </div>
         

@@ -1,6 +1,7 @@
 .text-input{
     border: 1px solid #cacccd;
     height: 50px;
+    width: 100%;
     padding: $s-size;
     font-size: $font-size-large;
     font-weight: 300;
@@ -8,11 +9,12 @@
 
 .select{
     @extend .text-input;
-
+    width: 100%;
 }
 
 .textarea{
     @extend .text-input;
-    height: 10rem;
+    height: 35rem;
+    width: 100%;
     
 }

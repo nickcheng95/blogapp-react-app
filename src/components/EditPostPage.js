@@ -20,9 +20,14 @@ export class EditPostPage extends React.Component{
         return (
             <div>
                 <div className='content-container'>
-                    <Link to={`/read/${this.props.post.id}`}>Post readable at: {`https://blogapp-react-app.herokuapp.com/read/${this.props.post.id}`}</Link>
-                    <PostForm onSubmit={this.handleEdit} post={this.props.post}></PostForm>
-                    <button className='button' onClick={this.handleRemove}>Remove Post</button>
+                    <div className='editpage__read'>
+                        <Link to={`/read/${this.props.post.id}`}>Post readable at: {`https://blogapp-react-app.herokuapp.com/read/${this.props.post.id}`}</Link>
+                    </div>
+                    <div>
+                        <PostForm onSubmit={this.handleEdit} post={this.props.post}></PostForm>
+                        <button className='button button__remove' onClick={this.handleRemove}>Remove Post</button>
+                    </div>
+                    
                 </div>
                 
             </div>

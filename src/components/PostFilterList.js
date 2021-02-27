@@ -23,12 +23,17 @@ export class PostFilterList extends React.Component{
     render(){
         return (
             <div>
-                <input type='text' placeholder='search post' value={this.props.filters.text} onChange={this.onTextChange}></input>
-                <select onChange={this.onSortChange} value={this.props.filters.sortBy}>
-                    <option value='up'>Title Up</option>
-                    <option value='down'>Title Down</option>    
-    
-                </select>
+                <div className='input-group'>
+                    <div className='input-group__item'>
+                        <input type='text' className='text-input' placeholder='search post' value={this.props.filters.text} onChange={this.onTextChange}></input>
+                    </div>
+                    <div className='input-group__item'>
+                        <select onChange={this.onSortChange} value={this.props.filters.sortBy} className='select'>
+                            <option value='up'>Title Up</option>
+                            <option value='down'>Title Down</option>    
+                        </select>
+                    </div>
+                </div>              
             </div>
         )
     }

@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 
 export const ReadPostPage = (props)=>(
     <div>
-        <div>
-            <h1>{props.post.postTitle}</h1>
-            <h3>{props.post.postContent}</h3>
+        <div className='content-container'>
+            <h1 className='read__title'>{props.post.postTitle}</h1>
+            <h3 className='read__content'>{props.post.postContent}</h3>
         </div>
     </div>
 )
