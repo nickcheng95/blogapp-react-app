@@ -6,7 +6,7 @@ import {setTextFilter,sortByTitleDown,sortByTitleUp} from '../actions/filters'
 export class PostFilterList extends React.Component{
 
     onTextChange = (e) => {
-        const text = e.target.value;
+        const text = e.target.value.toLowerCase();
         this.props.setTextFilter(text)
     }
 
