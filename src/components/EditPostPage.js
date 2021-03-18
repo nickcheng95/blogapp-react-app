@@ -21,7 +21,7 @@ export class EditPostPage extends React.Component{
             <div>
                 <div className='content-container'>
                     <div className='editpage__read'>
-                        <Link to={`/read/${this.props.post.id}`}>Post readable at: {`https://blogapp-react-app.herokuapp.com/read/${this.props.post.id}`}</Link>
+                        <Link to={`/read/${this.props.uid}&postid=${this.props.post.id}`}>Post readable at: {`https://blogapp-react-app.herokuapp.com/read/${this.props.uid}&postid=${this.props.post.id}`}</Link>
                     </div>
                     <div>
                         <PostForm onSubmit={this.handleEdit} post={this.props.post}></PostForm>
@@ -43,7 +43,8 @@ const mapDispatchToProps = (dispatch)=>({
 
 const mapStateToProps = (state,props) => {
     return {
-        post: state.posts.find((val) => val.id === props.match.params.id)
+        post: state.posts.find((val) => val.id === props.match.params.id),
+        uid: state.auth.uid
     }
 }
 

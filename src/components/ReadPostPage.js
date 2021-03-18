@@ -1,18 +1,31 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import readpost from '../selectors/readpost'
 
 
-export const ReadPostPage = (props)=>(
-    <div>
-        <div className='content-container'>
-            <h1 className='read__title'>{props.post.postTitle}</h1>
-            <h3 className='read__content'>{props.post.postContent}</h3>
-        </div>
-    </div>
-)
+class ReadPostPage extends React.Component{
+    state={
+        readpost: {postTitle:'Blog not found',postContent:''}
+    }
 
-const mapStateToProps = (state,props) => ({
-    post: state.posts.find((val) => val.id === props.match.params.id)
-})
+    componentDidMount(){
+        const postUIDandID = this.props.match.params.id.split('&postid=');
+        readpost(postUIDandID[0],postUIDandID[1]).then((snap)=>{
+            this.setState(()=>({
+                readpost: snap.val()
+            }))
+        })   
+    }
+    
+    render(){
+        return (
+            <div>
+                <div className='content-container'>
+                    <h1 className='read__title'>{this.state.readpost.postTitle}</h1>
+                    <h3 className='read__content'>{this.state.readpost.postContent}</h3>
+                </div>
+            </div>
+        )
+    }
+} 
 
-export default connect(mapStateToProps)(ReadPostPage)
+export default ReadPostPage
